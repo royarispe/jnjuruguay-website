@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "root",
+    "password": "your_password",
+    "database": "jnjuruguay_website_dev",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "your_password",
+    "database": "jnjuruguay_website_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "prod_user",
+    "password": "prod_password",
+    "database": "jnjuruguay_website_prod",
+    "host": "prod_host",
+    "dialect": "mysql"
+  }
+}
+

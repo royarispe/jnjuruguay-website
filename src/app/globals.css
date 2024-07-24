@@ -2,32 +2,126 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: #ACC8E5; /* Fondo azul claro */
+    --foreground: #ffffff; /* Blanco */
+    --primary: #f4d35e; /* Amarillo */
+    --primary-foreground: #0d3b66; /* Azul oscuro */
+    --secondary: #ee964b; /* Naranja */
+    --secondary-foreground: #ffffff; /* Blanco */
+    --border: #dbe7e4; /* Azul claro */
+    --input: #dbe7e4; /* Azul claro */
+    --ring: #0d3b66; /* Azul oscuro */
+    --navbar-background: #85D5ED; /* Fondo de la navbar */
+    --navbar-text: #006991; /* Texto de la navbar */
+    --highlight-button: #C4D330; /* Botón destacado */
+    --radius: 0.5rem;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+  .dark {
+    --background: #0d3b66; /* Azul oscuro */
+    --foreground: #ffffff; /* Blanco */
+    --primary: #f4d35e; /* Amarillo */
+    --primary-foreground: #0d3b66; /* Azul oscuro */
+    --secondary: #ee964b; /* Naranja */
+    --secondary-foreground: #ffffff; /* Blanco */
+    --border: #3d4a4d; /* Azul más oscuro */
+    --input: #3d4a4d; /* Azul más oscuro */
+    --ring: #0d3b66; /* Azul oscuro */
+    --navbar-background: #85D5ED; /* Fondo de la navbar */
+    --navbar-text: #006991; /* Texto de la navbar */
+    --highlight-button: #C4D330; /* Botón destacado */
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  body {
+    background-color: #ACC8E5; /* Fondo azul claro */
+    color: #000000; /* Negro */
+  }
+
+  .container {
+    max-width: 1200px; /* Aumentar el tamaño máximo del contenedor */
+    margin: auto;
+    padding: 1rem; /* Reducir el padding para reducir el espacio */
+    text-align: center;
+  }
+  
+  h1 {
+    color: #EA3637; /* Rojo */
+    margin-bottom: 1rem; /* Reducir el margen inferior */
+  }
+  
+  img {
+    border-radius: 0.5rem;
+  }
+  
+  .aspect-ratio {
+    width: 100%;
+    height: auto;
+    max-height: 80vh; /* Ajustar la altura para que la imagen ocupe más espacio */
+    margin: auto;
+  }
+
+  .navbar {
+    background-color: var(--navbar-background);
+    color: var(--navbar-text);
+  }
+
+  .navbar-link {
+    color: var(--navbar-text);
+  }
+
+  .highlight-button {
+    background-color: var(--highlight-button);
+    color: var(--background);
+    border-radius: var(--radius);
+    padding: 0.5rem 1rem;
+  }
+
+  header, footer {
+    padding: 0.5rem 1rem;
+  }
+
+  .menu-button {
+    display: none;
+  }
+
+  .bg-dark-blue {
+    background-color: #0d3b66; /* Fondo azul oscuro */
+  }
+  
+  .text-white {
+    color: #ffffff; /* Texto blanco */
+  }
+  
+  .card-form-field input,
+  .card-form-field select {
+    color: #ffffff;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+  }
+  
+  .card-form-field label {
+    color: #ffffff;
+  }
+  
+
+  @media (max-width: 768px) {
+    .menu-button {
+      display: block;
+    }
+    .navbar ul {
+      display: none;
+    }
+    .navbar ul.block {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    .navbar ul.block li {
+      margin-bottom: 1rem;
+    }
   }
 }
